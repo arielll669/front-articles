@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { ArticleTable } from './components/article-table/article-table';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ArticleTable],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('plos-articles');
+  title = 'plos-articles';
 }

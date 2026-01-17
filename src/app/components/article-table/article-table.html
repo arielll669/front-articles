@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="header">
+    <h1>Scientific Articles</h1>
+    <p class="subtitle">Powered by PLOS API</p>
+  </div>
+
+  @if (loading) {
+    <p>Cargando artículos...</p>
+  } @else {
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Journal</th>
+          <th>Publication Date</th>
+          <th>DOI</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (article of articles; track article.id) {
+          <tr>
+            <td class="title-cell">
+              <span class="title-indicator"></span>
+              {{ article.title_display }}
+            </td>
+            <td>
+              <span class="journal-badge">{{ article.journal }}</span>
+            </td>
+            <td>{{ article.publication_date | date:'dd MMM yyyy' }}</td>
+            <td>
+              <a [href]="'https://doi.org/' + article.id" target="_blank">
+                {{ article.id }}
+                <span class="external-icon">↗</span>
+              </a>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>
