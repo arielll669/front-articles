@@ -12,11 +12,12 @@ export class PlosService {
 
   constructor(private http: HttpClient) {}
 
-  getArticles(): Observable<Article[]> {
+  getArticles(searchTerm: string = 'university', searchType: string = 'title'): Observable<Article[]> {
     const params = {
-      q: 'title:university',
+      q: `${searchType}:${searchTerm}`,
       wt: 'json',
       fl: 'id,title_display,journal,publication_date',
+      rows: '50',
     };
 
     return this.http.get<any>(this.apiUrl, { params }).pipe(

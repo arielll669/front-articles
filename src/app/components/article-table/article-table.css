@@ -22,6 +22,58 @@ h1 {
   margin-top: 5px;
 }
 
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.search-box input {
+  padding: 10px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 250px;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #14b8a6;
+}
+
+.search-box select {
+  padding: 10px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.search-box select:focus {
+  outline: none;
+  border-color: #14b8a6;
+}
+
+.search-box button {
+  padding: 10px 20px;
+  background-color: #0f766e;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background-color: #14b8a6;
+}
+
+.loading-text {
+  text-align: center;
+  color: #0f766e;
+}
+
 table {
   width: 100%;
   border-collapse: separate;

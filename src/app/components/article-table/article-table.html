@@ -4,8 +4,18 @@
     <p class="subtitle">Powered by PLOS API</p>
   </div>
 
+  <div class="search-box">
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm" 
+      placeholder="Search by title..."
+    />
+    <button (click)="search()">🔍 Search</button>
+    <button class="btn-clear" (click)="clear()">✕ Clear</button>
+  </div>
+
   @if (loading) {
-    <p>Cargando artículos...</p>
+    <p class="loading-text">Loading articles...</p>
   } @else {
     <table>
       <thead>
